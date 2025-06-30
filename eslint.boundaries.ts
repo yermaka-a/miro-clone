@@ -1,29 +1,31 @@
-import boundaries from "eslint-plugin-boundaries"
+import boundaries from "eslint-plugin-boundaries";
 
 export const eslintBoundariesConfig = {
   plugins: {
     boundaries,
   },
-  "import/resolver": {
-    typescript: {
-      alwaysTryTypes: true,
+  settings: {
+    "import/resolver": {
+      typescript: {
+        alwaysTryTypes: true,
+      },
     },
-  },
 
-  "boundaries/elements": [
-    {
-      type: "app",
-      pattern: "./src/app"
-    },
-    {
-      type: "features",
-      pattern: "./src/features/*"
-    },
-    {
-      type: "shared",
-      pattern: "./src/shared",
-    }
-  ],
+    "boundaries/elements": [
+      {
+        type: "app",
+        pattern: "./src/app",
+      },
+      {
+        type: "features",
+        pattern: "./src/features/*",
+      },
+      {
+        type: "shared",
+        pattern: "./src/shared",
+      },
+    ],
+  },
   rules: {
     "boundaries/element-types": [
       2,
