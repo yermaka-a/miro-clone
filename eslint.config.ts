@@ -3,7 +3,7 @@ import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint, { type InfiniteDepthConfigWithExtends } from "typescript-eslint";
-import { eslintBoundariesConfig } from "./eslint.boundaries.ts";
+import { eslintBoundariesConfig } from "./eslint.boundaries.js";
 
 export default tseslint.config(
     { ignores: ["dist"] },
