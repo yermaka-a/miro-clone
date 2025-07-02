@@ -6,13 +6,20 @@ import tseslint, { type InfiniteDepthConfigWithExtends } from "typescript-eslint
 import { eslintBoundariesConfig } from "./eslint.boundaries.js";
 
 export default tseslint.config(
-    { ignores: ["dist"] },
+    { ignores: ["dist", "eslint.config.ts", "eslint.boundaries.ts"] },
     {
-        extends: [js.configs.recommended, ...tseslint.configs.recommended],
+
+        extends: [js.configs.recommended,
+        ...tseslint.configs.recommended,
+        ],
         files: ["**/*.{ts,tsx}"],
         languageOptions: {
             ecmaVersion: 2020,
             globals: globals.browser,
+            parserOptions: {
+                projectService: true,
+                tsconfigRootDir: import.meta.dirname,
+            },
         },
         plugins: {
             "react-hooks": reactHooks,
