@@ -1,8 +1,10 @@
-import { BoardPage } from "@/features/board";
+import { AppHeader } from "@/features/header";
+import { Outlet } from "react-router-dom";
 export function App() {
   return (
     <div>
-      <BoardPage />
+      <AppHeader />
+      <Outlet />
     </div>
   );
 }
